@@ -1,10 +1,25 @@
-import React from 'react'
-import { Button } from './ui/button'
+"use client";
+
+import React, { useTransition } from "react";
+import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
+import { createNewDocument } from "@/actions/actions";
 
 const NewDocumentButton = () => {
-  return (
-    <Button>New Document</Button>
-  )
-}
+  const [isPending, startTransition] = useTransition();
+  const router = useRouter();
 
-export default NewDocumentButton
+  const handleNewDocument = () => {
+    startTransition(async () => {
+      const { docId } = await createNewDocument();
+      router.push(`/doc/${docId}`);
+    });
+  };
+  return (
+    <Button onClick={handleNewDocument} disabled={isPending}>
+      {isPending ? "Creating..." : "New Document"}
+    </Button>
+  );
+};
+
+export default NewDocumentButton;
