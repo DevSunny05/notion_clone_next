@@ -3,6 +3,7 @@
 import { SignedOut, SignedIn, SignInButton, UserButton } from '@clerk/clerk-react'
 import { useUser } from '@clerk/nextjs'
 import React from 'react'
+import Breadcrumbs from './Breadcrumbs'
 
 const Header = () => {
     const {user}=useUser()
@@ -18,6 +19,7 @@ const Header = () => {
         }
 
         {/* breadcrum */}
+        <Breadcrumbs/>
 
         <SignedOut>
             <SignInButton/>
