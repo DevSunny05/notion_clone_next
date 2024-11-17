@@ -19,16 +19,17 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body>
-          <Header/>
+          <Header />
 
           <div className="flex min-h-screen">
             {/* sidebar */}
-            <Sidebar/>
+            <Sidebar />
 
-            <div className="flex-1 p-4 bg-gray-100 overflow-y-auto scrollbar-hide">{children}</div>
+            <div className="flex-1 p-4 bg-gray-100 overflow-y-auto scrollbar-hide">
+              {children}
+            </div>
           </div>
-          
-          </body>
+        </body>
       </html>
     </ClerkProvider>
   );
