@@ -8,7 +8,7 @@ const DocLayout = ({
   params: { id }
 }: {
   children: React.ReactNode;
-  params: { id: string };
+  params: { id:string };
 }) => {
   return <RoomProvider roomId={id}>{children}</RoomProvider>;
 };
