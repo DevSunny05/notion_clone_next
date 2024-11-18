@@ -19,7 +19,7 @@ const Editor = () => {
     }`
   return (
     <div className='max-w-6xl mx-auto'>
-        <div>
+        <div className="flex items-center gap-2 justify-end mb-10">
             {/* translate document ai */}
             {/* {chatto document ai} */}
             {/* dark mode */}
